@@ -7,11 +7,6 @@ const express = require("express");
 const PORT = process.env.PORT || 3001;
 const app = express();
 
-app.listen(PORT, function() {
-    console.log("App listening on PORT http://localhost:" + PORT)
-});
-
-
 
 // ROUTES
 // ====================================================
@@ -21,4 +16,11 @@ app.get("/", function(req, res) {
 
 app.get("/notes", function(req, res) {
     res.json(path.join(__dirname, "public/notes.html"));
+});
+
+
+// LISTENER
+// ====================================================
+app.listen(PORT, function() {
+    console.log("App listening on PORT http://localhost:" + PORT)
 });
