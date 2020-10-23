@@ -1,6 +1,7 @@
-const path = require("path");
-const fs = require("fs");
+// DEPENDENCIES
+// ====================================================
 const express = require("express");
+
 
 // PORT
 // ====================================================
@@ -8,15 +9,16 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 
 
-// ROUTES
+// DATA PARSING
 // ====================================================
-app.get("/", function(req, res) {
-    res.json(path.join(__dirname, "public/index.html"));
-});
+app.use(express.urlencoded({ extended: true}));
+app.use(express.json());
 
-app.get("/notes", function(req, res) {
-    res.json(path.join(__dirname, "public/notes.html"));
-});
+
+// ROUTING
+// ====================================================
+require("./api-routes")(app);
+require("./html-routes")(app);
 
 
 // LISTENER
