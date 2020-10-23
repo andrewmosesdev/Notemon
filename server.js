@@ -1,7 +1,6 @@
 // DEPENDENCIES
 // ====================================================
 const express = require("express");
-const fs = require("fs");
 
 // PORT
 // ====================================================
@@ -13,6 +12,7 @@ const app = express();
 // ====================================================
 app.use(express.urlencoded({ extended: true}));
 app.use(express.json());
+// serve static files in the public directory
 app.use(express.static("public"));
 
 
