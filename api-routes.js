@@ -1,6 +1,6 @@
 // DEPENDENCIES
 // ================================================
-const jsonPath = require("./db/db.json")
+const jsonFilePath = require("./db/db.json")
 
 
 // ROUTES
@@ -8,17 +8,14 @@ const jsonPath = require("./db/db.json")
 
 module.exports = function(app) {
 
-
 app.get("/api/notes", function(req, res) {
-    res.json(jsonPath);
-    // console.log(jsonPath);
+    return res.json(jsonFilePath);
+    // console.log(jsonFilePath);
 });
 
-
-
 app.post("/api/notes", function(req, res) {
-    jsonPath.push(req.body);
-    // console.log(jsonPath);
+    jsonFilePath.push(req.body);
+    // console.log(jsonFilePath);
     res.json(true);
 })
 
