@@ -9,7 +9,7 @@
    ## Demo:
   ![Demo](/tutorial.gif)
   
-  [Demo Link]()
+  [Demo Link](https://github.com/andrewmosesdrive/Notemon/blob/main/tutorial.gif?raw=true)
 
 
   
